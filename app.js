@@ -11,6 +11,7 @@ const open_horaire = document.querySelector('.open_horaire')
 const actual_hour = document.querySelector('.hour_actual')
 
 var open = 0
+
 var now = new Date();
 const first_column = document.querySelectorAll('.first_column')
 const second_column = document.querySelectorAll('.second_column')
@@ -119,6 +120,8 @@ open_horaire.addEventListener("click", () => {
         planning.classList.add('moved')
 
         var hour = Number(('0'+now.getHours()).slice(-2));
+        minutes_test  = Number(('0'+now.getMinutes()).slice(-2));
+        
         if (hour < 11) actual_hour.style.left = '-41%'
         else if (hour >= 14) actual_hour.style.left = '44.70%'
         else {
